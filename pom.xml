@@ -13,6 +13,21 @@
 
 	<name>CrashData parent pom</name>
 	
+	<scm>
+		<url>https://github.com/haster/crashdata-parent</url>
+		<connection>scm:git:git@github.com:haster/crashdata-parent.git</connection>
+		<tag>HEAD</tag>
+	</scm>
+
+	<repositories>
+	</repositories>
+	
+	<pluginRepositories>
+	</pluginRepositories>
+
+	<distributionManagement>
+	</distributionManagement>
+	
 	<modules>
 		<module>eclipse-settings</module>
 	</modules>
