@@ -11,6 +11,8 @@
 
 	<artifactId>eclipse-settings</artifactId>
 	<packaging>jar</packaging>
+	
+	<name>Crashdata eclipse settings</name>
 
 	<build>
 		<defaultGoal>package</defaultGoal>
