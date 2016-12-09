@@ -1,0 +1,580 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<prerequisites>
+		<maven>3.2.0</maven>
+	</prerequisites>
+
+	<groupId>nl.crashdata.crashdata-parent</groupId>
+	<artifactId>crashdata-parent</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<name>CrashData parent pom</name>
+	
+	<modules>
+		<module>eclipse-settings</module>
+	</modules>
+	
+	<properties>
+		<version.java>1.8</version.java>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	</properties>
+	
+	<build>
+		<defaultGoal>package</defaultGoal>
+		<sourceDirectory>src/main/java</sourceDirectory>
+		<testSourceDirectory>src/test/java</testSourceDirectory>
+		
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>net.alchim31.maven</groupId>
+					<artifactId>yuicompressor-maven-plugin</artifactId>
+					<version>1.5.1</version>
+					<configuration>
+						<encoding>UTF-8</encoding>
+						<statistics>true</statistics>
+						<jswarn>false</jswarn>
+						<suffix>.min</suffix>
+					</configuration>
+					<executions>
+						<execution>
+							<phase>generate-resources</phase>
+							<goals>
+								<goal>compress</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.5.1</version>
+					<inherited>true</inherited>
+					<configuration>
+						<source>${version.java}</source>
+						<target>${version.java}</target>
+						<encoding>UTF-8</encoding>
+						<showWarnings>true</showWarnings>
+						<showDeprecation>true</showDeprecation>
+					</configuration>
+				</plugin>
+				
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-eclipse-plugin</artifactId>
+					<version>2.10</version>
+					<inherited>true</inherited>
+					<configuration>
+						<downloadSources>true</downloadSources>
+						<downloadJavadoc>false</downloadJavadoc>
+						<additionalConfig>
+							<file>
+								<name>.settings/edu.umd.cs.findbugs.plugin.eclipse.prefs</name>
+								<location>/edu.umd.cs.findbugs.plugin.eclipse.prefs</location>
+							</file>
+							<file>
+								<name>.settings/org.eclipse.core.resources.prefs</name>
+								<location>/org.eclipse.core.resources.prefs</location>
+							</file>
+							<file>
+								<name>.settings/org.eclipse.jdt.apt.core.prefs</name>
+								<location>/org.eclipse.jdt.apt.core.prefs</location>
+							</file>
+							<file>
+								<name>.settings/org.eclipse.jdt.core.prefs</name>
+								<location>/org.eclipse.jdt.core.prefs</location>
+							</file>
+							<file>
+								<name>.settings/org.eclipse.jdt.ui.prefs</name>
+								<location>/org.eclipse.jdt.ui.prefs</location>
+							</file>
+							<file>
+								<name>.settings/org.eclipse.m2e.core.prefs</name>
+								<location>/org.eclipse.m2e.core.prefs</location>
+							</file>
+							<file>
+								<name>.settings/org.eclipse.wst.validation.prefs</name>
+								<location>/org.eclipse.wst.validation.prefs</location>
+							</file>
+							<file>
+								<name>.settings/org.maven.ide.eclipse.prefs</name>
+								<location>/org.maven.ide.eclipse.prefs</location>
+							</file>
+							<file>
+								<name>.settings/org.eclipse.core.runtime.prefs</name>
+								<location>/org.eclipse.core.runtime.prefs</location>
+							</file>
+							<file>
+								<name>.settings/org.eclipse.jdt.launching.prefs</name>
+								<location>/org.eclipse.jdt.launching.prefs</location>
+							</file>
+							<file>
+								<name>.settings/org.jboss.tools.jst.web.kb.prefs</name>
+								<location>/org.jboss.tools.jst.web.kb.prefs</location>
+							</file>
+						</additionalConfig>
+					</configuration>
+					<dependencies>
+						<dependency>
+							<groupId>nl.crashdata.eclipse</groupId>
+							<artifactId>eclipse-settings</artifactId>
+							<version>1.0</version>
+						</dependency>
+					</dependencies>
+				</plugin>
+				
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-enforcer-plugin</artifactId>
+					<version>1.4.1</version>
+					<executions>
+						<execution>
+							<phase>validate</phase>
+							<goals>
+								<goal>enforce</goal>
+							</goals>
+						</execution>
+					</executions>
+					<configuration>
+						<rules>
+							<dependencyConvergence/>
+							<bannedDependencies>
+								<excludes combine.children="append">
+<!-- 									<exclude>javax.annotation:javax.annotation-api</exclude> -->
+<!-- 									<exclude>javax.servlet:javax.servlet-api</exclude> -->
+<!-- 									<exclude>javax.xml.stream:stax-api</exclude> -->
+<!-- 									<exclude>javax.ws.rs:javax.ws.rs-api</exclude> -->
+<!-- 									<exclude>javax.mail:mail</exclude> -->
+<!-- 									<exclude>javax.enterprise.concurrent:javax.enterprise.concurrent-api</exclude> -->
+<!-- 									<exclude>org.jboss.spec.javax.transaction:jboss-transaction-api_1.1_spec</exclude> -->
+<!-- 									<exclude>cglib:cglib-nodep</exclude> -->
+<!-- 									<exclude>asm</exclude> -->
+<!-- 									<exclude>commons-logging</exclude> -->
+<!-- 									<exclude>bouncycastle:bcmail-jdk14</exclude> -->
+<!-- 									<exclude>org.bouncycastle:bcmail-jdk14</exclude> -->
+<!-- 									<exclude>bouncycastle:bcprov-jdk14</exclude> -->
+<!-- 									<exclude>org.bouncycastle:bcprov-jdk14</exclude> -->
+<!-- 									<exclude>org.bouncycastle:bctsp-jdk14</exclude> -->
+<!-- 									<exclude>stax:stax-api</exclude> -->
+<!-- 									<exclude>net.java.dev.jna:platform</exclude> -->
+<!-- 									<exclude>rhino:js</exclude> -->
+<!-- 									<exclude>xerces:xercesImpl</exclude> -->
+<!-- 									<exclude>xalan:xalan</exclude> -->
+<!-- 									<exclude>xalan:serializer</exclude> -->
+<!-- 									<exclude>net.sf.ehcache:ehcache-core</exclude> -->
+<!-- 									<exclude>org.apache.geronimo.specs</exclude> -->
+<!-- 									<exclude>com.google.code.findbugs:jsr305</exclude> -->
+<!-- 									<exclude>org.opensaml:opensaml</exclude> -->
+<!-- 									<exclude>org.seleniumhq.selenium:htmlunit-driver</exclude> -->
+								</excludes>
+							</bannedDependencies>
+							<banDuplicateClasses>
+								<findAllDuplicates>true</findAllDuplicates>
+								<dependencies combine.children="append">
+									<dependency>
+										<groupId>com.sun.istack</groupId>
+										<artifactId>istack-commons-runtime</artifactId>
+										<ignoreClasses>
+											<!-- part of Java SE 7 -->
+											<ignoreClass>com.sun.istack.*</ignoreClass>
+										</ignoreClasses>
+									</dependency>
+									<dependency>
+										<groupId>commons-beanutils</groupId>
+										<artifactId>commons-beanutils</artifactId>
+										<ignoreClasses>
+											<ignoreClass>org.apache.commons.collections.*</ignoreClass>
+										</ignoreClasses>
+									</dependency>
+									<dependency>
+										<groupId>xml-apis</groupId>
+										<artifactId>xml-apis</artifactId>
+										<ignoreClasses>
+											<!-- part of Java SE 7 -->
+											<ignoreClass>javax.xml.*</ignoreClass>
+											<ignoreClass>javax.xml.stream.*</ignoreClass>
+										</ignoreClasses>
+									</dependency>
+									<dependency>
+										<groupId>jaxen</groupId>
+										<artifactId>jaxen</artifactId>
+										<ignoreClasses>
+											<!-- part of Java SE 7 -->
+											<ignoreClass>org.w3c.dom.UserDataHandler</ignoreClass>
+										</ignoreClasses>
+									</dependency>
+									<dependency>
+										<groupId>org.apache.xmlbeans</groupId>
+										<artifactId>xmlbeans</artifactId>
+										<ignoreClasses>
+											<!-- part of Java SE 7 -->
+											<ignoreClass>org.w3c.dom.*</ignoreClass>
+											<!-- classes appear multiple times in the jar -->
+											<ignoreClass>org.apache.xmlbeans.xml.stream.*</ignoreClass>
+										</ignoreClasses>
+									</dependency>
+									<dependency>
+										<groupId>org.glassfish</groupId>
+										<artifactId>javax.el</artifactId>
+										<ignoreClasses>
+											<!-- de impl also contains the api -->
+											<ignoreClass>javax.el.*</ignoreClass>
+										</ignoreClasses>
+									</dependency>
+									<dependency>
+										<groupId>xpp3</groupId>
+										<artifactId>xpp3_min</artifactId>
+										<ignoreClasses>
+											contains part, but not all of xmlpull
+											<ignoreClass>org.xmlpull.v1.*</ignoreClass>
+										</ignoreClasses>
+									</dependency>
+									<dependency>
+										<groupId>org.springframework</groupId>
+										<artifactId>spring-aop</artifactId>
+										<ignoreClasses>
+											<!-- since SPR-13984 these classes are packaged in the jar -->
+											<ignoreClass>org.aopalliance.aop.*</ignoreClass>
+											<ignoreClass>org.aopalliance.intercept.*</ignoreClass>
+										</ignoreClasses>
+									</dependency>
+									<dependency>
+										<groupId>org.glassfish</groupId>
+										<artifactId>javax.json</artifactId>
+										<ignoreClasses>
+											<!-- The implementatie also contains the API -->
+											<ignoreClass>javax.json.*</ignoreClass>
+											<ignoreClass>javax.json.spi.*</ignoreClass>
+											<ignoreClass>javax.json.stream.*</ignoreClass>
+										</ignoreClasses>
+									</dependency>
+									<dependency>
+										<groupId>com.github.docker-java</groupId>
+										<artifactId>docker-java</artifactId>
+										<ignoreClasses>
+											<!-- docker-java 'patched' some classes for their convenience -->
+											<ignoreClass>org.apache.http.impl.io.*</ignoreClass>
+											<ignoreClass>org.newsclub.net.unix.*</ignoreClass>
+										</ignoreClasses>
+									</dependency>
+								</dependencies>
+							</banDuplicateClasses>
+							<compound implementation="com.github.ferstl.maven.pomenforcers.CompoundPedanticEnforcer">
+								<!-- Enforcers -->
+								<enforcers>POM_SECTION_ORDER,DEPENDENCY_MANAGEMENT_ORDER,DEPENDENCY_ORDER,DEPENDENCY_CONFIGURATION,PLUGIN_MANAGEMENT_ORDER,PLUGIN_CONFIGURATION</enforcers>
+								<dependencyManagementOrderBy>scope,groupId,artifactId</dependencyManagementOrderBy>
+								<dependencyManagementScopePriorities>provided,compile,runtime,test,import</dependencyManagementScopePriorities>
+								<dependencyManagementGroupIdPriorities>org.jboss.shrinkwrap</dependencyManagementGroupIdPriorities>
+								<dependenciesScopePriorities>import,provided,compile,runtime,test</dependenciesScopePriorities>
+							</compound>
+							<requireManagedDependencies implementation="nl.topicus.onderwijs.maven.RequireManagedDependencies">
+								<excludes combine.children="append">
+								</excludes>
+								<includedScopes>compile,provided,runtime,system,import</includedScopes>
+							</requireManagedDependencies>
+						</rules>
+					</configuration>
+					<dependencies>
+						<dependency>
+							<groupId>org.codehaus.mojo</groupId>
+							<artifactId>extra-enforcer-rules</artifactId>
+							<version>1.0-beta-3</version>
+						</dependency>
+						<dependency>
+							<groupId>com.github.ferstl</groupId>
+							<artifactId>pedantic-pom-enforcers</artifactId>
+							<version>1.2.0</version>
+						</dependency>
+						<dependency>
+							<groupId>nl.topicus.onderwijs.maven</groupId>
+							<artifactId>require-managed-dependencies</artifactId>
+							<version>1.4</version>
+						</dependency>
+					</dependencies>
+				</plugin>
+				
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-install-plugin</artifactId>
+					<version>2.5.2</version>
+				</plugin>
+				
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-jar-plugin</artifactId>
+					<version>3.0.2</version>
+					<configuration>
+						<archive>
+							<index>true</index>
+							<manifest>
+								<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+								<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+							</manifest>
+							<manifestEntries>
+							</manifestEntries>
+						</archive>
+					</configuration>
+					<executions>
+						<execution>
+							<goals>
+								<goal>test-jar</goal>
+							</goals>
+							<configuration>
+								<useDefaultManifestFile>false</useDefaultManifestFile>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+				
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-javadoc-plugin</artifactId>
+					<version>2.10.4</version>
+					<inherited>true</inherited>
+					<configuration>
+						<encoding>UTF-8</encoding>
+						<additionalparam>-Xdoclint:none</additionalparam>
+					</configuration>
+				</plugin>
+				
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-release-plugin</artifactId>
+					<version>2.5.3</version>
+				</plugin>
+				
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>3.0.1</version>
+					<inherited>true</inherited>
+					<configuration>
+						<encoding>UTF-8</encoding>
+					</configuration>
+				</plugin>
+				
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-source-plugin</artifactId>
+					<version>3.0.1</version>
+					<inherited>true</inherited>
+					<executions>
+						<execution>
+							<phase>package</phase>
+							<goals>
+								<goal>jar-no-fork</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>javacc-maven-plugin</artifactId>
+					<version>2.6</version>
+					<configuration>
+						<jdkVersion>${version.java}</jdkVersion>
+					</configuration>
+					<executions>
+						<execution>
+							<id>javacc</id>
+							<goals>
+								<goal>javacc</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>jaxb2-maven-plugin</artifactId>
+					<version>2.3</version>
+				</plugin>
+				
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>properties-maven-plugin</artifactId>
+					<version>1.0.0</version>
+					<executions>
+						<execution>
+							<goals>
+								<goal>set-system-properties</goal>
+							</goals>
+							<configuration>
+								<properties>
+									<property>
+										<name>java.awt.headless</name>
+										<value>true</value>
+									</property>
+								</properties>
+							</configuration>
+						</execution>
+					</executions>
+				</plugin>
+				
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>versions-maven-plugin</artifactId>
+					<version>2.3</version>
+					<configuration>
+						<rulesUri>file://${user.dir}/version-rules.xml</rulesUri>
+					</configuration>
+				</plugin>
+				
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions combine.children="append">
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>com.sun.tools.xjc.maven2</groupId>
+										<artifactId>maven-jaxb-plugin</artifactId>
+										<versionRange>[1.1.1,)</versionRange>
+										<goals>
+											<goal>generate</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<execute/>
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>net.alchim31.maven</groupId>
+										<artifactId>yuicompressor-maven-plugin</artifactId>
+										<versionRange>[1.3.0,)</versionRange>
+										<goals>
+											<goal>compress</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore/>
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>org.apache.maven.plugins</groupId>
+										<artifactId>maven-enforcer-plugin</artifactId>
+										<versionRange>[1.0.0,)</versionRange>
+										<goals>
+											<goal>enforce</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore/>
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>org.apache.maven.plugins</groupId>
+										<artifactId>maven-plugin-plugin</artifactId>
+										<versionRange>[3.3,)</versionRange>
+										<goals>
+											<goal>descriptor</goal>
+											<goal>helpmojo</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore/>
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>org.asciidoctor</groupId>
+										<artifactId>asciidoctor-maven-plugin</artifactId>
+										<versionRange>[1.5,)</versionRange>
+										<goals>
+											<goal>process-asciidoc</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<execute/>
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>org.bsc.maven</groupId>
+										<artifactId>maven-processor-plugin</artifactId>
+										<versionRange>[2.2.4,)</versionRange>
+										<goals>
+											<goal>process</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<execute/>
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>org.codehaus.mojo</groupId>
+										<artifactId>javacc-maven-plugin</artifactId>
+										<versionRange>[2.6,)</versionRange>
+										<goals>
+											<goal>javacc</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<execute/>
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>org.codehaus.mojo</groupId>
+										<artifactId>properties-maven-plugin</artifactId>
+										<versionRange>[1.0.0,)</versionRange>
+										<goals>
+											<goal>set-system-properties</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore/>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+				
+				<plugin>
+					<groupId>org.lesscss</groupId>
+					<artifactId>lesscss-maven-plugin</artifactId>
+					<version>1.7.0.1.1</version>
+					<inherited>true</inherited>
+					<configuration>
+						<compress>true</compress>
+						<encoding>utf-8</encoding>
+					</configuration>
+					<executions>
+						<execution>
+							<goals>
+								<goal>compile</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-enforcer-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>properties-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>
