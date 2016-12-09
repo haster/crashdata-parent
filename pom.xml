@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<prerequisites>
@@ -12,7 +13,7 @@
 	<packaging>pom</packaging>
 
 	<name>CrashData parent pom</name>
-	
+
 	<scm>
 		<url>https://github.com/haster/crashdata-parent</url>
 		<connection>scm:git:git@github.com:haster/crashdata-parent.git</connection>
@@ -21,28 +22,28 @@
 
 	<repositories>
 	</repositories>
-	
+
 	<pluginRepositories>
 	</pluginRepositories>
 
 	<distributionManagement>
 	</distributionManagement>
-	
+
 	<modules>
 		<module>eclipse-settings</module>
 	</modules>
-	
+
 	<properties>
 		<version.java>1.8</version.java>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
-	
+
 	<build>
 		<defaultGoal>package</defaultGoal>
 		<sourceDirectory>src/main/java</sourceDirectory>
 		<testSourceDirectory>src/test/java</testSourceDirectory>
-		
+
 		<pluginManagement>
 			<plugins>
 				<plugin>
@@ -64,7 +65,7 @@
 						</execution>
 					</executions>
 				</plugin>
-				
+
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
@@ -78,7 +79,7 @@
 						<showDeprecation>true</showDeprecation>
 					</configuration>
 				</plugin>
-				
+
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-eclipse-plugin</artifactId>
@@ -142,7 +143,7 @@
 						</dependency>
 					</dependencies>
 				</plugin>
-				
+
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-enforcer-plugin</artifactId>
@@ -160,32 +161,32 @@
 							<dependencyConvergence />
 							<bannedDependencies>
 								<excludes combine.children="append">
-<!-- 									<exclude>javax.annotation:javax.annotation-api</exclude> -->
-<!-- 									<exclude>javax.servlet:javax.servlet-api</exclude> -->
-<!-- 									<exclude>javax.xml.stream:stax-api</exclude> -->
-<!-- 									<exclude>javax.ws.rs:javax.ws.rs-api</exclude> -->
-<!-- 									<exclude>javax.mail:mail</exclude> -->
-<!-- 									<exclude>javax.enterprise.concurrent:javax.enterprise.concurrent-api</exclude> -->
-<!-- 									<exclude>org.jboss.spec.javax.transaction:jboss-transaction-api_1.1_spec</exclude> -->
-<!-- 									<exclude>cglib:cglib-nodep</exclude> -->
-<!-- 									<exclude>asm</exclude> -->
-<!-- 									<exclude>commons-logging</exclude> -->
-<!-- 									<exclude>bouncycastle:bcmail-jdk14</exclude> -->
-<!-- 									<exclude>org.bouncycastle:bcmail-jdk14</exclude> -->
-<!-- 									<exclude>bouncycastle:bcprov-jdk14</exclude> -->
-<!-- 									<exclude>org.bouncycastle:bcprov-jdk14</exclude> -->
-<!-- 									<exclude>org.bouncycastle:bctsp-jdk14</exclude> -->
-<!-- 									<exclude>stax:stax-api</exclude> -->
-<!-- 									<exclude>net.java.dev.jna:platform</exclude> -->
-<!-- 									<exclude>rhino:js</exclude> -->
-<!-- 									<exclude>xerces:xercesImpl</exclude> -->
-<!-- 									<exclude>xalan:xalan</exclude> -->
-<!-- 									<exclude>xalan:serializer</exclude> -->
-<!-- 									<exclude>net.sf.ehcache:ehcache-core</exclude> -->
-<!-- 									<exclude>org.apache.geronimo.specs</exclude> -->
-<!-- 									<exclude>com.google.code.findbugs:jsr305</exclude> -->
-<!-- 									<exclude>org.opensaml:opensaml</exclude> -->
-<!-- 									<exclude>org.seleniumhq.selenium:htmlunit-driver</exclude> -->
+									<!-- <exclude>javax.annotation:javax.annotation-api</exclude> -->
+									<!-- <exclude>javax.servlet:javax.servlet-api</exclude> -->
+									<!-- <exclude>javax.xml.stream:stax-api</exclude> -->
+									<!-- <exclude>javax.ws.rs:javax.ws.rs-api</exclude> -->
+									<!-- <exclude>javax.mail:mail</exclude> -->
+									<!-- <exclude>javax.enterprise.concurrent:javax.enterprise.concurrent-api</exclude> -->
+									<!-- <exclude>org.jboss.spec.javax.transaction:jboss-transaction-api_1.1_spec</exclude> -->
+									<!-- <exclude>cglib:cglib-nodep</exclude> -->
+									<!-- <exclude>asm</exclude> -->
+									<!-- <exclude>commons-logging</exclude> -->
+									<!-- <exclude>bouncycastle:bcmail-jdk14</exclude> -->
+									<!-- <exclude>org.bouncycastle:bcmail-jdk14</exclude> -->
+									<!-- <exclude>bouncycastle:bcprov-jdk14</exclude> -->
+									<!-- <exclude>org.bouncycastle:bcprov-jdk14</exclude> -->
+									<!-- <exclude>org.bouncycastle:bctsp-jdk14</exclude> -->
+									<!-- <exclude>stax:stax-api</exclude> -->
+									<!-- <exclude>net.java.dev.jna:platform</exclude> -->
+									<!-- <exclude>rhino:js</exclude> -->
+									<!-- <exclude>xerces:xercesImpl</exclude> -->
+									<!-- <exclude>xalan:xalan</exclude> -->
+									<!-- <exclude>xalan:serializer</exclude> -->
+									<!-- <exclude>net.sf.ehcache:ehcache-core</exclude> -->
+									<!-- <exclude>org.apache.geronimo.specs</exclude> -->
+									<!-- <exclude>com.google.code.findbugs:jsr305</exclude> -->
+									<!-- <exclude>org.opensaml:opensaml</exclude> -->
+									<!-- <exclude>org.seleniumhq.selenium:htmlunit-driver</exclude> -->
 								</excludes>
 							</bannedDependencies>
 							<banDuplicateClasses>
@@ -279,7 +280,8 @@
 									</dependency>
 								</dependencies>
 							</banDuplicateClasses>
-							<compound implementation="com.github.ferstl.maven.pomenforcers.CompoundPedanticEnforcer">
+							<compound
+								implementation="com.github.ferstl.maven.pomenforcers.CompoundPedanticEnforcer">
 								<!-- Enforcers -->
 								<enforcers>POM_SECTION_ORDER,DEPENDENCY_MANAGEMENT_ORDER,DEPENDENCY_ORDER,DEPENDENCY_CONFIGURATION,PLUGIN_MANAGEMENT_ORDER,PLUGIN_CONFIGURATION</enforcers>
 								<dependencyManagementOrderBy>scope,groupId,artifactId</dependencyManagementOrderBy>
@@ -287,7 +289,8 @@
 								<dependencyManagementGroupIdPriorities>org.jboss.shrinkwrap</dependencyManagementGroupIdPriorities>
 								<dependenciesScopePriorities>import,provided,compile,runtime,test</dependenciesScopePriorities>
 							</compound>
-							<requireManagedDependencies implementation="nl.topicus.onderwijs.maven.RequireManagedDependencies">
+							<requireManagedDependencies
+								implementation="nl.topicus.onderwijs.maven.RequireManagedDependencies">
 								<excludes combine.children="append">
 								</excludes>
 								<includedScopes>compile,provided,runtime,system,import</includedScopes>
@@ -312,13 +315,13 @@
 						</dependency>
 					</dependencies>
 				</plugin>
-				
+
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-install-plugin</artifactId>
 					<version>2.5.2</version>
 				</plugin>
-				
+
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-jar-plugin</artifactId>
@@ -345,7 +348,7 @@
 						</execution>
 					</executions>
 				</plugin>
-				
+
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-javadoc-plugin</artifactId>
@@ -356,13 +359,13 @@
 						<additionalparam>-Xdoclint:none</additionalparam>
 					</configuration>
 				</plugin>
-				
+
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-release-plugin</artifactId>
 					<version>2.5.3</version>
 				</plugin>
-				
+
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-resources-plugin</artifactId>
@@ -372,7 +375,7 @@
 						<encoding>UTF-8</encoding>
 					</configuration>
 				</plugin>
-				
+
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-source-plugin</artifactId>
@@ -387,7 +390,7 @@
 						</execution>
 					</executions>
 				</plugin>
-				
+
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>javacc-maven-plugin</artifactId>
@@ -404,13 +407,13 @@
 						</execution>
 					</executions>
 				</plugin>
-				
+
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>jaxb2-maven-plugin</artifactId>
 					<version>2.3</version>
 				</plugin>
-				
+
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>properties-maven-plugin</artifactId>
@@ -431,7 +434,7 @@
 						</execution>
 					</executions>
 				</plugin>
-				
+
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
 					<artifactId>versions-maven-plugin</artifactId>
@@ -440,7 +443,7 @@
 						<rulesUri>file://${user.dir}/version-rules.xml</rulesUri>
 					</configuration>
 				</plugin>
-				
+
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
 					<artifactId>lifecycle-mapping</artifactId>
@@ -557,7 +560,7 @@
 						</lifecycleMappingMetadata>
 					</configuration>
 				</plugin>
-				
+
 				<plugin>
 					<groupId>org.lesscss</groupId>
 					<artifactId>lesscss-maven-plugin</artifactId>
