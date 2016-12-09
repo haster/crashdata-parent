@@ -8,7 +8,7 @@
 
 	<groupId>nl.crashdata.crashdata-parent</groupId>
 	<artifactId>crashdata-parent</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.0</version>
 	<packaging>pom</packaging>
 
 	<name>CrashData parent pom</name>
@@ -16,7 +16,7 @@
 	<scm>
 		<url>https://github.com/haster/crashdata-parent</url>
 		<connection>scm:git:git@github.com:haster/crashdata-parent.git</connection>
-		<tag>HEAD</tag>
+		<tag>crashdata-parent-1.0</tag>
 	</scm>
 
 	<repositories>
@@ -157,7 +157,7 @@
 					</executions>
 					<configuration>
 						<rules>
-							<dependencyConvergence/>
+							<dependencyConvergence />
 							<bannedDependencies>
 								<excludes combine.children="append">
 <!-- 									<exclude>javax.annotation:javax.annotation-api</exclude> -->
@@ -458,7 +458,7 @@
 										</goals>
 									</pluginExecutionFilter>
 									<action>
-										<execute/>
+										<execute />
 									</action>
 								</pluginExecution>
 								<pluginExecution>
@@ -471,7 +471,7 @@
 										</goals>
 									</pluginExecutionFilter>
 									<action>
-										<ignore/>
+										<ignore />
 									</action>
 								</pluginExecution>
 								<pluginExecution>
@@ -484,7 +484,7 @@
 										</goals>
 									</pluginExecutionFilter>
 									<action>
-										<ignore/>
+										<ignore />
 									</action>
 								</pluginExecution>
 								<pluginExecution>
@@ -498,7 +498,7 @@
 										</goals>
 									</pluginExecutionFilter>
 									<action>
-										<ignore/>
+										<ignore />
 									</action>
 								</pluginExecution>
 								<pluginExecution>
@@ -511,7 +511,7 @@
 										</goals>
 									</pluginExecutionFilter>
 									<action>
-										<execute/>
+										<execute />
 									</action>
 								</pluginExecution>
 								<pluginExecution>
@@ -524,7 +524,7 @@
 										</goals>
 									</pluginExecutionFilter>
 									<action>
-										<execute/>
+										<execute />
 									</action>
 								</pluginExecution>
 								<pluginExecution>
@@ -537,7 +537,7 @@
 										</goals>
 									</pluginExecutionFilter>
 									<action>
-										<execute/>
+										<execute />
 									</action>
 								</pluginExecution>
 								<pluginExecution>
@@ -550,7 +550,7 @@
 										</goals>
 									</pluginExecutionFilter>
 									<action>
-										<ignore/>
+										<ignore />
 									</action>
 								</pluginExecution>
 							</pluginExecutions>
