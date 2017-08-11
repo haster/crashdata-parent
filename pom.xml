@@ -152,7 +152,7 @@
 						<dependency>
 							<groupId>nl.crashdata.crashdata-parent</groupId>
 							<artifactId>eclipse-settings</artifactId>
-							<version>${project.version}</version>
+							<version>1.2-SNAPSHOT</version>
 						</dependency>
 					</dependencies>
 				</plugin>
