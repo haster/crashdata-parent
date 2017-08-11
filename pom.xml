@@ -150,7 +150,7 @@
 					</configuration>
 					<dependencies>
 						<dependency>
-							<groupId>nl.crashdata.eclipse</groupId>
+							<groupId>nl.crashdata.crashdata-parent</groupId>
 							<artifactId>eclipse-settings</artifactId>
 							<version>${project.version}</version>
 						</dependency>
