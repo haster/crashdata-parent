@@ -38,15 +38,48 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<wildfly.version>10.1.1.Final</wildfly.version>
+		<version.wildfly>10.1.1.Final</version.wildfly>
+		<version.jackson>2.8.9</version.jackson>
+		<version.danekja>1.8.3</version.danekja>
+		<version.wicket>7.8.0</version.wicket>
 	</properties>
 
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-annotations</artifactId>
+				<version>${version.jackson}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-databind</artifactId>
+				<version>${version.jackson}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.datatype</groupId>
+				<artifactId>jackson-datatype-jsr310</artifactId>
+				<version>${version.jackson}</version>
+			</dependency>
+			<dependency>
+				<groupId>nl.crashdata.wicket-chartjs</groupId>
+				<artifactId>wicket-chartjs-data</artifactId>
+				<version>${project.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.wicket</groupId>
+				<artifactId>wicket-core</artifactId>
+				<version>${version.wicket}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.danekja</groupId>
+				<artifactId>jdk-serializable-functional</artifactId>
+				<version>${version.danekja}</version>
+			</dependency>
+			<dependency>
 				<groupId>org.wildfly.bom</groupId>
 				<artifactId>wildfly-javaee7-with-tools</artifactId>
-				<version>${wildfly.version}</version>
+				<version>${version.wildfly}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
