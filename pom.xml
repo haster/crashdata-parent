@@ -239,32 +239,19 @@
 							<dependencyConvergence />
 							<bannedDependencies>
 								<excludes combine.children="append">
-									<!-- <exclude>javax.annotation:javax.annotation-api</exclude> -->
-									<!-- <exclude>javax.servlet:javax.servlet-api</exclude> -->
-									<!-- <exclude>javax.xml.stream:stax-api</exclude> -->
-									<!-- <exclude>javax.ws.rs:javax.ws.rs-api</exclude> -->
-									<!-- <exclude>javax.mail:mail</exclude> -->
-									<!-- <exclude>javax.enterprise.concurrent:javax.enterprise.concurrent-api</exclude> -->
-									<!-- <exclude>org.jboss.spec.javax.transaction:jboss-transaction-api_1.1_spec</exclude> -->
-									<!-- <exclude>cglib:cglib-nodep</exclude> -->
-									<!-- <exclude>asm</exclude> -->
-									<!-- <exclude>commons-logging</exclude> -->
-									<!-- <exclude>bouncycastle:bcmail-jdk14</exclude> -->
-									<!-- <exclude>org.bouncycastle:bcmail-jdk14</exclude> -->
-									<!-- <exclude>bouncycastle:bcprov-jdk14</exclude> -->
-									<!-- <exclude>org.bouncycastle:bcprov-jdk14</exclude> -->
-									<!-- <exclude>org.bouncycastle:bctsp-jdk14</exclude> -->
-									<!-- <exclude>stax:stax-api</exclude> -->
-									<!-- <exclude>net.java.dev.jna:platform</exclude> -->
-									<!-- <exclude>rhino:js</exclude> -->
-									<!-- <exclude>xerces:xercesImpl</exclude> -->
-									<!-- <exclude>xalan:xalan</exclude> -->
-									<!-- <exclude>xalan:serializer</exclude> -->
-									<!-- <exclude>net.sf.ehcache:ehcache-core</exclude> -->
-									<!-- <exclude>org.apache.geronimo.specs</exclude> -->
-									<!-- <exclude>com.google.code.findbugs:jsr305</exclude> -->
-									<!-- <exclude>org.opensaml:opensaml</exclude> -->
-									<!-- <exclude>org.seleniumhq.selenium:htmlunit-driver</exclude> -->
+									<exclude>cglib:cglib-nodep</exclude>
+									<exclude>asm</exclude>
+									<exclude>commons-logging</exclude>
+									<exclude>bouncycastle:bcmail-jdk14</exclude>
+									<exclude>org.bouncycastle:bcmail-jdk14</exclude>
+									<exclude>bouncycastle:bcprov-jdk14</exclude>
+									<exclude>org.bouncycastle:bcprov-jdk14</exclude>
+									<exclude>org.bouncycastle:bctsp-jdk14</exclude>
+									<exclude>stax:stax-api</exclude>
+									<exclude>rhino:js</exclude>
+									<exclude>xalan:xalan</exclude>
+									<exclude>xalan:serializer</exclude>
+									<exclude>com.google.code.findbugs:jsr305</exclude>
 								</excludes>
 							</bannedDependencies>
 							<banDuplicateClasses>
