@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<prerequisites>
@@ -12,6 +13,24 @@
 	<packaging>pom</packaging>
 
 	<name>CrashData parent pom</name>
+	<description>Parent project for various subprojects</description>
+	<url>https://github.com/haster/crashdata-parent</url>
+
+	<licenses>
+		<license>
+			<name>MIT License</name>
+			<distribution>repo</distribution>
+			<url>http://www.opensource.org/licenses/mit-license.php</url>
+		</license>
+	</licenses>
+
+	<developers>
+		<developer>
+			<name>Sven Haster</name>
+			<email>buurman.sven@gmail.com</email>
+			<url>https://github.com/haster</url>
+		</developer>
+	</developers>
 
 	<scm>
 		<url>https://github.com/haster/crashdata-parent</url>
@@ -364,7 +383,8 @@
 									</dependency>
 								</dependencies>
 							</banDuplicateClasses>
-							<compound implementation="com.github.ferstl.maven.pomenforcers.CompoundPedanticEnforcer">
+							<compound
+								implementation="com.github.ferstl.maven.pomenforcers.CompoundPedanticEnforcer">
 								<!-- Enforcers -->
 								<enforcers>POM_SECTION_ORDER,DEPENDENCY_MANAGEMENT_ORDER,DEPENDENCY_ORDER,DEPENDENCY_CONFIGURATION,PLUGIN_MANAGEMENT_ORDER,PLUGIN_CONFIGURATION</enforcers>
 								<dependencyManagementOrderBy>scope,groupId,artifactId</dependencyManagementOrderBy>
@@ -372,7 +392,8 @@
 								<dependencyManagementGroupIdPriorities>org.jboss.shrinkwrap</dependencyManagementGroupIdPriorities>
 								<dependenciesScopePriorities>import,provided,compile,runtime,test</dependenciesScopePriorities>
 							</compound>
-							<requireManagedDependencies implementation="nl.topicus.onderwijs.maven.RequireManagedDependencies">
+							<requireManagedDependencies
+								implementation="nl.topicus.onderwijs.maven.RequireManagedDependencies">
 								<excludes combine.children="append">
 								</excludes>
 								<includedScopes>compile,provided,runtime,system,import</includedScopes>
