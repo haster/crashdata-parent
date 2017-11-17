@@ -3,7 +3,7 @@
 set -e
 
 function getVersion {
-    eval mvn org.apache.maven.plugins:maven-help-plugin:evaluate     -Dexpression=project.version 2> /dev/null | grep '^[0-9]\+\.'
+    eval mvn help:evaluate     -Dexpression=project.version 2> /dev/null | grep '^[0-9]\+\.'
 }
 
 function checkLocaleWijzigingen {
