@@ -3,7 +3,7 @@
 set -e
 
 function getVersion {
-    eval mvn org.apache.maven.plugins:maven-help-plugin:evaluate     -Dexpression=project.version 2> /dev/null | grep -Ev '(^\[|Download\w+:)'
+    eval mvn org.apache.maven.plugins:maven-help-plugin:evaluate     -Dexpression=project.version 2> /dev/null | grep '^[0-9]\+\.'
 }
 
 function checkLocaleWijzigingen {
@@ -30,6 +30,7 @@ function show_error {
 checkLocaleWijzigingen
 
 CURRENT_SNAPSHOT_VERSION=$(getVersion)
+#echo "Current version is: ${CURRENT_SNAPSHOT_VERSION}"
 CURRENT_VERSION=`expr $CURRENT_SNAPSHOT_VERSION : '\(.*\)-SNAPSHOT'`
 
 if [ "" == "$CURRENT_VERSION" ]
@@ -38,9 +39,12 @@ then
         exit 1
 fi
 
-export MAVEN_OPTS="-Xmx1024m -Xms512m -XX:PermSize=256m"
+export MAVEN_OPTS="-Xmx1024m -Xms512"
+
+echo "Release van $CURRENT_VERSION"
 
 mvn release:prepare release:perform -e -B -ff || {
         show_error "ERROR: Release build faalde!"
         exit 1
 }
+
