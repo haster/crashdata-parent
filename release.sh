@@ -3,7 +3,7 @@
 set -e
 
 function getVersion {
-    eval mvn help:evaluate     -Dexpression=project.version 2> /dev/null | grep '^[0-9]\+\.'
+    eval mvn help:evaluate  -Dexpression=project.version 2> /dev/null | grep '^[0-9]\+\.'
 }
 
 function checkLocaleWijzigingen {
@@ -39,7 +39,7 @@ then
         exit 1
 fi
 
-export MAVEN_OPTS="-Xmx1024m -Xms512"
+export MAVEN_OPTS="-Xmx1024m -Xms512m"
 
 echo "Release van $CURRENT_VERSION"
 
