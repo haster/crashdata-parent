@@ -85,7 +85,7 @@
 
 		<version.wildfly>10.1.1.Final</version.wildfly>
 		<version.jackson>2.9.3</version.jackson>
-		<version.danekja>1.8.4</version.danekja>
+		<version.danekja>1.8.5</version.danekja>
 		<version.wicket>7.9.0</version.wicket>
 	</properties>
 
@@ -512,7 +512,7 @@
                                 <plugin>
                                         <groupId>org.apache.maven.plugins</groupId>
                                         <artifactId>maven-site-plugin</artifactId>
-                                        <version>3.6</version>
+                                        <version>3.7</version>
                                 </plugin>
 
 				<plugin>
