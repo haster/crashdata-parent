@@ -84,9 +84,9 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 		<version.wildfly>10.1.1.Final</version.wildfly>
-		<version.jackson>2.9.3</version.jackson>
+		<version.jackson>2.9.4</version.jackson>
 		<version.danekja>1.8.5</version.danekja>
-		<version.wicket>7.9.0</version.wicket>
+		<version.wicket>7.10.0</version.wicket>
 	</properties>
 
 	<dependencyManagement>
