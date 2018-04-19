@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<prerequisites>
@@ -84,8 +86,9 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 		<version.wildfly>10.1.1.Final</version.wildfly>
-		<version.jackson>2.9.4</version.jackson>
 		<version.danekja>1.8.5</version.danekja>
+		<version.jackson>2.9.4</version.jackson>
+		<version.junit.jupiter>5.1.0</version.junit.jupiter>
 		<version.wicket>7.10.0</version.wicket>
 	</properties>
 
@@ -145,6 +148,16 @@
 				<groupId>org.danekja</groupId>
 				<artifactId>jdk-serializable-functional</artifactId>
 				<version>${version.danekja}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.junit.jupiter</groupId>
+				<artifactId>junit-jupiter-api</artifactId>
+				<version>${version.junit.jupiter}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.junit.jupiter</groupId>
+				<artifactId>junit-jupiter-engine</artifactId>
+				<version>${version.junit.jupiter}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.slf4j</groupId>
@@ -223,11 +236,11 @@
 					</executions>
 				</plugin>
 
-                                <plugin>
-                                        <groupId>org.apache.maven.plugins</groupId>
-                                        <artifactId>maven-clean-plugin</artifactId>
-                                        <version>3.0.0</version>
-                                </plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-clean-plugin</artifactId>
+					<version>3.0.0</version>
+				</plugin>
 
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -243,11 +256,11 @@
 					</configuration>
 				</plugin>
 
-                                <plugin>
-                                        <groupId>org.apache.maven.plugins</groupId>
-                                        <artifactId>maven-deploy-plugin</artifactId>
-                                        <version>2.8.2</version>
-                                </plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-deploy-plugin</artifactId>
+					<version>2.8.2</version>
+				</plugin>
 
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -436,7 +449,8 @@
 									</dependency>
 								</dependencies>
 							</banDuplicateClasses>
-							<compound implementation="com.github.ferstl.maven.pomenforcers.CompoundPedanticEnforcer">
+							<compound
+								implementation="com.github.ferstl.maven.pomenforcers.CompoundPedanticEnforcer">
 								<!-- Enforcers -->
 								<enforcers>POM_SECTION_ORDER,DEPENDENCY_MANAGEMENT_ORDER,DEPENDENCY_ORDER,DEPENDENCY_CONFIGURATION,PLUGIN_MANAGEMENT_ORDER,PLUGIN_CONFIGURATION</enforcers>
 								<dependencyManagementOrderBy>scope,groupId,artifactId</dependencyManagementOrderBy>
@@ -444,7 +458,8 @@
 								<dependencyManagementGroupIdPriorities>org.jboss.shrinkwrap</dependencyManagementGroupIdPriorities>
 								<dependenciesScopePriorities>import,provided,compile,runtime,test</dependenciesScopePriorities>
 							</compound>
-							<requireManagedDependencies implementation="nl.topicus.onderwijs.maven.RequireManagedDependencies">
+							<requireManagedDependencies
+								implementation="nl.topicus.onderwijs.maven.RequireManagedDependencies">
 								<excludes combine.children="append">
 								</excludes>
 								<includedScopes>compile,provided,runtime,system,import</includedScopes>
@@ -551,11 +566,11 @@
 					</configuration>
 				</plugin>
 
-                                <plugin>
-                                        <groupId>org.apache.maven.plugins</groupId>
-                                        <artifactId>maven-site-plugin</artifactId>
-                                        <version>3.7</version>
-                                </plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-site-plugin</artifactId>
+					<version>3.7</version>
+				</plugin>
 
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
@@ -572,22 +587,29 @@
 					</executions>
 				</plugin>
 
-                                <plugin>
-                                        <groupId>org.apache.maven.plugins</groupId>
-                                        <artifactId>maven-surefire-plugin</artifactId>
-                                        <version>2.21.0</version>
-                                        <inherited>true</inherited>
-                                        <configuration>
-                                                <argLine>-Xmx1536m</argLine>
-                                                <systemPropertyVariables>
-                                                        <java.awt.headless>true</java.awt.headless>
-                                                </systemPropertyVariables>
-                                                <includes>
-                                                        <include>**/*.java</include>
-                                                </includes>
-                                                <useManifestOnlyJar>false</useManifestOnlyJar>
-                                        </configuration>
-                                </plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>2.21.0</version>
+					<inherited>true</inherited>
+					<configuration>
+						<argLine>-Xmx1536m</argLine>
+						<systemPropertyVariables>
+							<java.awt.headless>true</java.awt.headless>
+						</systemPropertyVariables>
+						<includes>
+							<include>**/*.java</include>
+						</includes>
+						<useManifestOnlyJar>false</useManifestOnlyJar>
+					</configuration>
+					<dependencies>
+						<dependency>
+							<groupId>org.junit.platform</groupId>
+							<artifactId>junit-platform-surefire-provider</artifactId>
+							<version>1.2.0-M1</version>
+						</dependency>
+					</dependencies>
+				</plugin>
 
 				<plugin>
 					<groupId>org.codehaus.mojo</groupId>
