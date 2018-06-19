@@ -8,7 +8,7 @@
 
 	<groupId>nl.crashdata.crashdata-parent</groupId>
 	<artifactId>crashdata-parent</artifactId>
-	<version>1.17-SNAPSHOT</version>
+	<version>1.17</version>
 	<packaging>pom</packaging>
 
 	<name>CrashData parent pom</name>
@@ -34,7 +34,7 @@
 	<scm>
 		<url>https://github.com/haster/crashdata-parent</url>
 		<connection>scm:git:git@github.com:haster/crashdata-parent.git</connection>
-		<tag>HEAD</tag>
+		<tag>crashdata-parent-1.17</tag>
 	</scm>
 
 	<repositories>
@@ -346,7 +346,7 @@
 						<dependency>
 							<groupId>nl.crashdata.crashdata-parent</groupId>
 							<artifactId>eclipse-settings</artifactId>
-							<version>1.17-SNAPSHOT</version>
+							<version>1.17</version>
 						</dependency>
 					</dependencies>
 				</plugin>
