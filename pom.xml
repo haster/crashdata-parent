@@ -131,7 +131,7 @@
 			<dependency>
 				<groupId>org.apache.commons</groupId>
 				<artifactId>commons-collections4</artifactId>
-				<version>4.1</version>
+				<version>4.2</version>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.wicket</groupId>
@@ -275,7 +275,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
-					<version>3.7.0</version>
+					<version>3.8.0</version>
 					<inherited>true</inherited>
 					<configuration>
 						<source>${version.java}</source>
@@ -487,29 +487,29 @@
 								<dependencyManagementGroupIdPriorities>org.jboss.shrinkwrap</dependencyManagementGroupIdPriorities>
 								<dependenciesScopePriorities>import,provided,compile,runtime,test</dependenciesScopePriorities>
 							</compound>
-							<requireManagedDependencies implementation="nl.topicus.onderwijs.maven.RequireManagedDependencies">
-								<excludes combine.children="append">
-								</excludes>
-								<includedScopes>compile,provided,runtime,system,import</includedScopes>
-							</requireManagedDependencies>
+							<!--<requireManagedDependencies implementation="nl.topicus.onderwijs.maven.RequireManagedDependencies">-->
+								<!--<excludes combine.children="append">-->
+								<!--</excludes>-->
+								<!--<includedScopes>compile,provided,runtime,system,import</includedScopes>-->
+							<!--</requireManagedDependencies>-->
 						</rules>
 					</configuration>
 					<dependencies>
 						<dependency>
 							<groupId>org.codehaus.mojo</groupId>
 							<artifactId>extra-enforcer-rules</artifactId>
-							<version>1.0-beta-3</version>
+							<version>1.0-beta-9</version>
 						</dependency>
 						<dependency>
 							<groupId>com.github.ferstl</groupId>
 							<artifactId>pedantic-pom-enforcers</artifactId>
 							<version>1.3.1</version>
 						</dependency>
-						<dependency>
-							<groupId>nl.topicus.onderwijs.maven</groupId>
-							<artifactId>require-managed-dependencies</artifactId>
-							<version>1.5</version>
-						</dependency>
+						<!--<dependency>-->
+							<!--<groupId>nl.topicus.onderwijs.maven</groupId>-->
+							<!--<artifactId>require-managed-dependencies</artifactId>-->
+							<!--<version>1.5</version>-->
+						<!--</dependency>-->
 					</dependencies>
 				</plugin>
 
