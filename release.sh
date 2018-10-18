@@ -26,6 +26,13 @@ function show_error {
         echo -e "\033[0;31m$*\033[0m"
 }
 
+MAVEN_ARGS=""
+
+if [ "$1" == "--settings" ]
+then
+	MAVEN_ARGS="--settings ${2}"
+	echo "Using maven settings file at ${2}"
+fi
 
 checkLocaleWijzigingen
 
@@ -43,7 +50,7 @@ export MAVEN_OPTS="-Xmx1024m -Xms512m"
 
 echo "Release van $CURRENT_VERSION"
 
-mvn release:prepare release:perform -Prelease -e -B -ff || {
+mvn ${MAVEN_ARGS} release:prepare release:perform -Prelease -e -B -ff || {
         show_error "ERROR: Release build faalde!"
         exit 1
 }
