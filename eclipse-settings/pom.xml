@@ -8,7 +8,7 @@
 		<version>1.21-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>eclipse-settings</artifactId>
+	<artifactId>crashdata-eclipse-settings</artifactId>
 	<packaging>jar</packaging>
 	
 	<name>Crashdata eclipse settings</name>

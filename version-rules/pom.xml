@@ -8,7 +8,7 @@
 		<version>1.21-SNAPSHOT</version>
 	</parent>
 
-	<artifactId>version-rules</artifactId>
+	<artifactId>crashdata-version-rules</artifactId>
 	<packaging>jar</packaging>
 	
 	<name>Crashdata version rules</name>

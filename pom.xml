@@ -373,7 +373,7 @@
 					<dependencies>
 						<dependency>
 							<groupId>nl.crashdata.crashdata-parent</groupId>
-							<artifactId>eclipse-settings</artifactId>
+							<artifactId>crashdata-eclipse-settings</artifactId>
 							<version>1.21-SNAPSHOT</version>
 						</dependency>
 					</dependencies>
@@ -708,7 +708,7 @@
 					</configuration>
 					<dependencies><dependency>
 						<groupId>nl.crashdata.crashdata-parent</groupId>
-						<artifactId>version-rules</artifactId>
+						<artifactId>crashdata-version-rules</artifactId>
 						<version>1.21-SNAPSHOT</version>
 					</dependency>
 					</dependencies>
