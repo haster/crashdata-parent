@@ -80,7 +80,7 @@
 	</modules>
 
 	<properties>
-		<version.java>1.8</version.java>
+		<version.java>9</version.java>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
@@ -302,6 +302,7 @@
 					<configuration>
 						<source>${version.java}</source>
 						<target>${version.java}</target>
+						<release>${version.java}</release>
 						<encoding>UTF-8</encoding>
 						<showWarnings>true</showWarnings>
 						<showDeprecation>true</showDeprecation>
