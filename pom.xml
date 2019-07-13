@@ -95,13 +95,6 @@
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-                <groupId>org.jboss.spec</groupId>
-                <artifactId>jboss-javaee-8.0</artifactId>
-                <version>1.0.3.Final</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-			<dependency>
 				<groupId>com.fasterxml.jackson.core</groupId>
 				<artifactId>jackson-annotations</artifactId>
 				<version>${version.jackson}</version>
@@ -223,6 +216,13 @@
 				<version>1.5.0</version>
 				<scope>test</scope>
 			</dependency>
+			<dependency>
+                <groupId>org.jboss.spec</groupId>
+                <artifactId>jboss-javaee-8.0</artifactId>
+                <version>1.0.3.Final</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
 		</dependencies>
 	</dependencyManagement>
 
