@@ -15,5 +15,6 @@
 		<ignoreVersion type="regex">.*Draft.*</ignoreVersion>
 		<ignoreVersion type="regex">.*ALPHA</ignoreVersion>
 		<ignoreVersion type="regex">.*BETA</ignoreVersion>
+		<ignoreVersion type="regex">.*\.[pP][rR].</ignoreVersion>
 	</ignoreVersions>
 </ruleset>
