@@ -86,9 +86,9 @@
 
 		<version.danekja>1.9.0</version.danekja>
 		<version.jackson>2.9.9</version.jackson>
-		<version.junit.jupiter>5.5.0</version.junit.jupiter>
-		<version.junit.platform>1.5.0</version.junit.platform>
-		<version.slf4j>1.7.26</version.slf4j>
+		<version.junit.jupiter>5.5.1</version.junit.jupiter>
+		<version.junit.platform>1.5.1</version.junit.platform>
+		<version.slf4j>1.7.27</version.slf4j>
 		<version.wicket>8.5.0</version.wicket>
 	</properties>
 
@@ -107,7 +107,8 @@
 			<dependency>
 				<groupId>com.fasterxml.jackson.core</groupId>
 				<artifactId>jackson-databind</artifactId>
-				<version>${version.jackson}</version>
+				<!-- this version is databind only -->
+				<version>2.9.9.3</version>
 			</dependency>
 			<dependency>
 				<groupId>com.fasterxml.jackson.datatype</groupId>
@@ -142,7 +143,7 @@
 			<dependency>
 				<groupId>org.apache.commons</groupId>
 				<artifactId>commons-collections4</artifactId>
-				<version>4.3</version>
+				<version>4.4</version>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.wicket</groupId>
@@ -219,7 +220,7 @@
 			<dependency>
                 <groupId>org.jboss.spec</groupId>
                 <artifactId>jboss-javaee-8.0</artifactId>
-                <version>1.0.3.Final</version>
+                <version>1.0.4.Final</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -627,7 +628,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-site-plugin</artifactId>
-					<version>3.7.1</version>
+					<version>3.8.2</version>
 				</plugin>
 
 				<plugin>
