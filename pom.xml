@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<prerequisites>
@@ -99,125 +101,225 @@
 				<artifactId>jackson-annotations</artifactId>
 				<version>${version.jackson}</version>
 			</dependency>
+			
 			<dependency>
 				<groupId>com.fasterxml.jackson.core</groupId>
 				<artifactId>jackson-core</artifactId>
 				<version>${version.jackson}</version>
 			</dependency>
+			
 			<dependency>
 				<groupId>com.fasterxml.jackson.core</groupId>
 				<artifactId>jackson-databind</artifactId>
 				<!-- this version is databind only -->
 				<version>2.9.9.3</version>
 			</dependency>
+			
 			<dependency>
 				<groupId>com.fasterxml.jackson.datatype</groupId>
 				<artifactId>jackson-datatype-jsr310</artifactId>
 				<version>${version.jackson}</version>
 			</dependency>
+			
 			<dependency>
 				<groupId>com.github.openjson</groupId>
 				<artifactId>openjson</artifactId>
 				<version>1.0.11</version>
 			</dependency>
+			
+			<dependency>
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+				<version>28.0-jre</version>
+				<exclusions>
+					<exclusion>
+						<groupId>com.google.code.findbugs</groupId>
+						<artifactId>jsr305</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			
 			<dependency>
 				<groupId>commons-fileupload</groupId>
 				<artifactId>commons-fileupload</artifactId>
 				<version>1.4</version>
 			</dependency>
+			
 			<dependency>
 				<groupId>commons-io</groupId>
 				<artifactId>commons-io</artifactId>
 				<version>2.6</version>
 			</dependency>
+			
 			<dependency>
 				<groupId>javax.servlet</groupId>
 				<artifactId>javax.servlet-api</artifactId>
 				<version>4.0.1</version>
 			</dependency>
+			
 			<dependency>
 				<groupId>junit</groupId>
 				<artifactId>junit</artifactId>
 				<version>4.12</version>
 			</dependency>
+			
 			<dependency>
 				<groupId>org.apache.commons</groupId>
 				<artifactId>commons-collections4</artifactId>
 				<version>4.4</version>
 			</dependency>
+			
+			<dependency>
+				<groupId>org.apache.httpcomponents</groupId>
+				<artifactId>httpclient</artifactId>
+				<version>4.5.9</version>
+				<exclusions>
+					<exclusion>
+						<groupId>commons-logging</groupId>
+						<artifactId>commons-logging</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			
 			<dependency>
 				<groupId>org.apache.wicket</groupId>
 				<artifactId>wicket-core</artifactId>
 				<version>${version.wicket}</version>
 			</dependency>
+			
 			<dependency>
 				<groupId>org.apache.wicket</groupId>
 				<artifactId>wicket-request</artifactId>
 				<version>${version.wicket}</version>
 			</dependency>
+			
 			<dependency>
 				<groupId>org.apache.wicket</groupId>
 				<artifactId>wicket-util</artifactId>
 				<version>${version.wicket}</version>
 			</dependency>
+			
 			<dependency>
 				<groupId>org.danekja</groupId>
 				<artifactId>jdk-serializable-functional</artifactId>
 				<version>${version.danekja}</version>
 			</dependency>
+			
+			<dependency>
+				<groupId>org.eclipse.jetty</groupId>
+				<artifactId>jetty-bom</artifactId>
+				<version>${jetty.version}</version>
+				<type>pom</type>
+			</dependency>
+			
 			<dependency>
 				<groupId>org.slf4j</groupId>
 				<artifactId>slf4j-api</artifactId>
 				<version>${version.slf4j}</version>
 			</dependency>
+			
 			<dependency>
-		        <groupId>org.slf4j</groupId>
-		        <artifactId>slf4j-simple</artifactId>
-		        <version>${version.slf4j}</version>
-	    	</dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-simple</artifactId>
+				<version>${version.slf4j}</version>
+			</dependency>
+			
+			<!-- xalan:xalan is required for htmlunit -->
+			<dependency>
+				<groupId>xalan</groupId>
+				<artifactId>xalan</artifactId>
+				<version>2.7.2</version>
+				<exclusions>
+					<exclusion>
+						<groupId>xalan</groupId>
+						<artifactId>serializer</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			
+			<dependency>
+				<groupId>net.sourceforge.htmlunit</groupId>
+				<artifactId>htmlunit</artifactId>
+				<version>2.35.0</version>
+				<scope>test</scope>
+				<exclusions>
+					<exclusion>
+						<groupId>commons-logging</groupId>
+						<artifactId>commons-logging</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			
 			<dependency>
 				<groupId>org.junit.jupiter</groupId>
 				<artifactId>junit-jupiter-api</artifactId>
 				<version>${version.junit.jupiter}</version>
 				<scope>test</scope>
 			</dependency>
+			
 			<dependency>
 				<groupId>org.junit.jupiter</groupId>
 				<artifactId>junit-jupiter-engine</artifactId>
 				<version>${version.junit.jupiter}</version>
 				<scope>test</scope>
 			</dependency>
+			
 			<dependency>
 				<groupId>org.junit.platform</groupId>
 				<artifactId>junit-platform-commons</artifactId>
 				<version>${version.junit.platform}</version>
 				<scope>test</scope>
 			</dependency>
+			
 			<dependency>
 				<groupId>org.junit.platform</groupId>
 				<artifactId>junit-platform-engine</artifactId>
 				<version>${version.junit.platform}</version>
 				<scope>test</scope>
 			</dependency>
+			
 			<dependency>
 				<groupId>org.junit.platform</groupId>
 				<artifactId>junit-platform-launcher</artifactId>
 				<version>${version.junit.platform}</version>
 				<scope>test</scope>
 			</dependency>
+			
 			<dependency>
 				<groupId>org.junit.vintage</groupId>
 				<artifactId>junit-vintage-engine</artifactId>
 				<version>${version.junit.jupiter}</version>
 				<scope>test</scope>
 			</dependency>
+			
 			<dependency>
-                <groupId>org.jboss.spec</groupId>
-                <artifactId>jboss-javaee-8.0</artifactId>
-                <version>1.0.4.Final</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
+				<groupId>org.seleniumhq.selenium</groupId>
+				<artifactId>htmlunit-driver</artifactId>
+				<version>2.35.1</version>
+				<scope>test</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.seleniumhq.selenium</groupId>
+				<artifactId>selenium-java</artifactId>
+				<version>3.141.59</version>
+				<scope>test</scope>
+			</dependency>
+
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>jcl-over-slf4j</artifactId>
+				<version>1.7.26</version>
+				<scope>test</scope>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.jboss.spec</groupId>
+				<artifactId>jboss-javaee-8.0</artifactId>
+				<version>1.0.4.Final</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
@@ -508,7 +610,8 @@
 									</dependency>
 								</dependencies>
 							</banDuplicateClasses>
-							<compound implementation="com.github.ferstl.maven.pomenforcers.CompoundPedanticEnforcer">
+							<compound
+								implementation="com.github.ferstl.maven.pomenforcers.CompoundPedanticEnforcer">
 								<!-- Enforcers -->
 								<enforcers>POM_SECTION_ORDER,DEPENDENCY_MANAGEMENT_ORDER,DEPENDENCY_ORDER,DEPENDENCY_CONFIGURATION,PLUGIN_MANAGEMENT_ORDER,PLUGIN_CONFIGURATION</enforcers>
 								<dependencyManagementOrderBy>scope,groupId,artifactId</dependencyManagementOrderBy>
@@ -516,11 +619,11 @@
 								<dependencyManagementGroupIdPriorities>org.jboss.shrinkwrap</dependencyManagementGroupIdPriorities>
 								<dependenciesScopePriorities>import,provided,compile,runtime,test</dependenciesScopePriorities>
 							</compound>
-							<!--<requireManagedDependencies implementation="nl.topicus.onderwijs.maven.RequireManagedDependencies">-->
-								<!--<excludes combine.children="append">-->
-								<!--</excludes>-->
-								<!--<includedScopes>compile,provided,runtime,system,import</includedScopes>-->
-							<!--</requireManagedDependencies>-->
+							<!--<requireManagedDependencies implementation="nl.topicus.onderwijs.maven.RequireManagedDependencies"> -->
+							<!--<excludes combine.children="append"> -->
+							<!--</excludes> -->
+							<!--<includedScopes>compile,provided,runtime,system,import</includedScopes> -->
+							<!--</requireManagedDependencies> -->
 						</rules>
 					</configuration>
 					<dependencies>
@@ -534,11 +637,11 @@
 							<artifactId>pedantic-pom-enforcers</artifactId>
 							<version>1.3.2</version>
 						</dependency>
-						<!--<dependency>-->
-							<!--<groupId>nl.topicus.onderwijs.maven</groupId>-->
-							<!--<artifactId>require-managed-dependencies</artifactId>-->
-							<!--<version>1.5</version>-->
-						<!--</dependency>-->
+						<!--<dependency> -->
+						<!--<groupId>nl.topicus.onderwijs.maven</groupId> -->
+						<!--<artifactId>require-managed-dependencies</artifactId> -->
+						<!--<version>1.5</version> -->
+						<!--</dependency> -->
 					</dependencies>
 				</plugin>
 
@@ -712,11 +815,12 @@
 					<configuration>
 						<rulesUri>classpath:///version-rules.xml</rulesUri>
 					</configuration>
-					<dependencies><dependency>
-						<groupId>nl.crashdata.crashdata-parent</groupId>
-						<artifactId>crashdata-version-rules</artifactId>
-						<version>1.29-SNAPSHOT</version>
-					</dependency>
+					<dependencies>
+						<dependency>
+							<groupId>nl.crashdata.crashdata-parent</groupId>
+							<artifactId>crashdata-version-rules</artifactId>
+							<version>1.29-SNAPSHOT</version>
+						</dependency>
 					</dependencies>
 				</plugin>
 
