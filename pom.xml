@@ -412,6 +412,10 @@
 									<exclude>xalan:serializer</exclude>
 									<exclude>com.google.code.findbugs:jsr305</exclude>
 								</excludes>
+								<includes>
+									<!-- xalan:xalan is required for the selenium htmlunit driver -->
+									<include>xalan:xalan:*:*:test</include>
+								</includes>
 							</bannedDependencies>
 							<banDuplicateClasses>
 								<findAllDuplicates>true</findAllDuplicates>
